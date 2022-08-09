@@ -1,14 +1,17 @@
 package com.bridglabz.firstspringapp.controller;
 
+import com.bridglabz.firstspringapp.model.User;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/hello")
 public class HelloRestController {
-	 @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
-	    public String sayHello(@RequestParam(value = "name") String name){
-	        return "hello"+" " +name+" From BridgLabz"+ "!";
-    }
+	 @PostMapping("/post")
+	    public String sayHelllo(@RequestBody User user)
+	    {
+	        return "Hello  "+user.getfName()+" "+user.getlName()+" !";
+	    }
 
 
 }
